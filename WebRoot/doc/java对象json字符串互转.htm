@@ -1,0 +1,992 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="java对象json字符串互转.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>李益</o:Author>
+  <o:LastAuthor>李益</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>27</o:TotalTime>
+  <o:Created>2016-09-26T09:07:00Z</o:Created>
+  <o:LastSaved>2016-09-26T09:07:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>245</o:Words>
+  <o:Characters>1401</o:Characters>
+  <o:Company>Microsoft</o:Company>
+  <o:Lines>11</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1643</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="java对象json字符串互转.files/themedata.thmx">
+<link rel=colorSchemeMapping href="java对象json字符串互转.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 64767 1 0 415 0;}
+@font-face
+	{font-family:simsun;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"Times New Roman";
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	mso-char-indent-count:2.0;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:795295047;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1954140230 2102452848 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%5\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:105.0pt;
+	text-indent:-21.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:126.0pt;
+	text-indent:-21.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:147.0pt;
+	text-indent:-21.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%8\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-21.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:189.0pt;
+	text-indent:-21.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-font-kerning:1.0pt;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>暂时以知两种模式</span>
+</p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>dependency</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>groupId</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:black;
+mso-font-kerning:0pt'>com.alibaba</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&lt;/</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#3F7F7F;mso-font-kerning:0pt'>groupId</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>artifactId</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><u><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:black;mso-font-kerning:0pt'>fastjson</span></u><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>artifactId</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>version</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:black;
+mso-font-kerning:0pt'>1.1.15</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&lt;/</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#3F7F7F;mso-font-kerning:0pt'>version</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>scope</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:black;
+mso-font-kerning:0pt'>compile</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&lt;/</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#3F7F7F;mso-font-kerning:0pt'>scope</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>dependency</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-fareast-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><span
+style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>Java</span><span style='font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:Consolas;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>对象转字符串</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:30.0pt;mso-char-indent-count:3.0'><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>String s = JSON.toJSONString(ret); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>2.</span><span
+style='font-size:10.0pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>字符串转</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>java</span><span style='font-size:
+10.0pt;font-family:宋体;mso-ascii-font-family:Consolas;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>对象</span><span
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'> <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>String js=”{\”name\”:\”bi”,\”age\”:23}”;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>User user = JSON.parseObject(js,User.class);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>User user =
+JSON.parseObject(js,new TypeReference&lt;User&gt;())<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>3.</span><span
+style='font-size:10.0pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>字符串转换为</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>List<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>ArrayList&lt;User&gt;
+users = JSON.parseObject(js,new
+TypeReference&lt;ArrayList&lt;User&gt;&gt;(){});<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>4.</span><span
+style='font-size:10.0pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>字符串转化为对象数组</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>User[] users =
+JSON.parseObject(js,new TypeReference&lt;User[]&gt;(){});<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+Consolas;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;
+mso-font-kerning:0pt'>对象数组转</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>List<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>List list =
+Arrays.asList(users);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:宋体;mso-ascii-font-family:
+Consolas;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;
+mso-font-kerning:0pt'>第二种方式</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>&lt;</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#3F7F7F;mso-font-kerning:0pt'>dependency</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-font-kerning:
+0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>groupId</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'>net.sf.json-<u>lib</u></span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>groupId</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-font-kerning:
+0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>artifactId</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><u><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'>json</span></u><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:black;mso-font-kerning:0pt'>-<u>lib</u></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>artifactId</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>version</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'>2.4</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>version</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-font-kerning:
+0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&lt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#3F7F7F;
+mso-font-kerning:0pt'>classifier</span><span lang=EN-US style='font-size:10.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:
+0pt'>&gt;</span><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:black;mso-font-kerning:0pt'>jdk15</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:teal;mso-font-kerning:0pt'>&lt;/</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#3F7F7F;mso-font-kerning:0pt'>classifier</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;</span><span lang=EN-US style='font-size:
+10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-font-kerning:
+0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'>&lt;/</span><span
+lang=EN-US style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#3F7F7F;mso-font-kerning:0pt'>dependency</span><span lang=EN-US
+style='font-size:10.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:teal;mso-font-kerning:0pt'>&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:10.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:teal;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. Java</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>对象转字符串</span></p>
+
+<p class=MsoNormal><span lang=EN-US>String s =
+JSONObject.fromObject(obj).toString();</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2 .Java</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>对象列表转化为</span><span lang=EN-US>json</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>对象数组</span></p>
+
+<p class=MsoNormal><span lang=EN-US>JSONArray array =
+JSONArray.fromObject(userList);</span></p>
+
+<p class=MsoNormal><span lang=EN-US>//</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>转化为数组</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span>array.toString();</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>3.</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>字符串转</span><span lang=EN-US>java</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>对象</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646;background:#CCE8CF'>&nbsp;<span
+class=apple-converted-space>&nbsp;</span>str =
+&quot;{\&quot;lendperson\&quot;:\&quot;</span><span style='mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:simsun;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:simsun;
+color:#464646;background:#CCE8CF'>李四</span><span lang=EN-US style='mso-bidi-font-size:
+10.5pt;font-family:"simsun","serif";color:#464646;background:#CCE8CF'>\&quot;,\&quot;lendcompany\&quot;:\&quot;</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>有限公司</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,\&quot;checkperson\&quot;:\&quot;</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>李四</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,</span><span lang=EN-US style='mso-bidi-font-size:
+10.5pt;font-family:"simsun","serif";color:#464646'><br>
+<span style='background:#CCE8CF'>&nbsp;&nbsp;\&quot;lenddate\&quot;:\&quot;2010-07-19T00:00:00\&quot;,\&quot;lendcounts\&quot;:4,\&quot;</span><br>
+<span style='background:#CCE8CF'>&nbsp;&nbsp;passports\&quot;:[{\&quot;passportid\&quot;:\&quot;d\&quot;,\&quot;name\&quot;:\&quot;</span></span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>李豫川</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,\&quot;passporttype\&quot;:\&quot;K\&quot;},</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";
+color:#464646'><br>
+<span style='background:#CCE8CF'>&nbsp;&nbsp;{\&quot;passportid\&quot;:\&quot;K9051\&quot;,\&quot;name\&quot;:\&quot;</span></span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>李平</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,\&quot;passporttype\&quot;:\&quot;K\&quot;},</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";
+color:#464646'><br>
+<span style='background:#CCE8CF'>&nbsp;&nbsp;{\&quot;passportid\&quot;:\&quot;K90517\&quot;,\&quot;name\&quot;:\&quot;</span></span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>袁寒梅</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,\&quot;passporttype\&quot;:\&quot;K\&quot;},</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";
+color:#464646'><br>
+<span style='background:#CCE8CF'>&nbsp;&nbsp;{\&quot;passportid\&quot;:\&quot;K905199\&quot;,\&quot;name\&quot;:\&quot;</span></span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646;background:#CCE8CF'>贺明</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"simsun","serif";color:#464646;
+background:#CCE8CF'>\&quot;,\&quot;passporttype\&quot;:\&quot;K\&quot;}]}&quot;;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646;background:#CCE8CF'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'>JSONObject jsonObject =
+JSONObject.fromObject(str);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'>User user =
+(User)JSONObject.toBean(jsonObject,User.class);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'>4.json</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646'>字符串转为</span><span lang=EN-US style='mso-bidi-font-size:
+10.5pt;font-family:"simsun","serif";color:#464646'>java</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:simsun;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+simsun;color:#464646'>对象数组</span><span lang=EN-US style='mso-bidi-font-size:
+10.5pt;font-family:"simsun","serif";color:#464646'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'>JSONArray json =
+JSONArray.fromObject(ss);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"simsun","serif";color:#464646'>List&lt;User&gt; users =
+(List&lt;User&gt;)JSONArray.toCollection(json,User.class);<span
+style='background:#CCE8CF'><o:p></o:p></span></span></p>
+
+</div>
+
+</body>
+
+</html>
